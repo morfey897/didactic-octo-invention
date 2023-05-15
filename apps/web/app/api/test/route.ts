@@ -1,11 +1,8 @@
 import type { NextRequest } from 'next/server';
 
-export const config = {
-  runtime: 'edge',
-};
+export const runtime = 'edge';
 
-export default function GET(req: NextRequest) {
-  console.log('req', typeof req);
+export async function GET(req: NextRequest) {
   return new Response(
     JSON.stringify({ test: 'DATA_TEST' }),
     {
